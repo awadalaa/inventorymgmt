@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6830096D198ECCE80012CA7D /* CDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830096C198ECCE80012CA7D /* CDItem.m */; };
+		68300971198ECE490012CA7D /* CDItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300970198ECE490012CA7D /* CDItemStore.m */; };
+		68300973198ED0400012CA7D /* INVItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68300972198ED0400012CA7D /* INVItemDetailViewController.xib */; };
+		68300976198ED0D80012CA7D /* INVItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300975198ED0D80012CA7D /* INVItemDetailViewController.m */; };
+		68D0BD03198EC9EA00AFEED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD02198EC9EA00AFEED4 /* Foundation.framework */; };
+		68D0BD05198EC9EA00AFEED4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */; };
+		68D0BD07198EC9EA00AFEED4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD06198EC9EA00AFEED4 /* UIKit.framework */; };
+		68D0BD0D198EC9EA00AFEED4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68D0BD0B198EC9EA00AFEED4 /* InfoPlist.strings */; };
+		68D0BD0F198EC9EA00AFEED4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D0BD0E198EC9EA00AFEED4 /* main.m */; };
+		68D0BD13198EC9EA00AFEED4 /* INVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D0BD12198EC9EA00AFEED4 /* INVAppDelegate.m */; };
+		68D0BD15198EC9EA00AFEED4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D0BD14198EC9EA00AFEED4 /* Images.xcassets */; };
+		68D0BD1C198EC9EA00AFEED4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD1B198EC9EA00AFEED4 /* XCTest.framework */; };
+		68D0BD1D198EC9EA00AFEED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD02198EC9EA00AFEED4 /* Foundation.framework */; };
+		68D0BD1E198EC9EA00AFEED4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD06198EC9EA00AFEED4 /* UIKit.framework */; };
+		68D0BD26198EC9EA00AFEED4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68D0BD24198EC9EA00AFEED4 /* InfoPlist.strings */; };
+		68D0BD28198EC9EA00AFEED4 /* inventorymgmtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D0BD27198EC9EA00AFEED4 /* inventorymgmtTests.m */; };
+		68D0BD34198ECA2000AFEED4 /* INVMasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68D0BD33198ECA2000AFEED4 /* INVMasterTableViewController.m */; };
+		68D0BD36198ECB4900AFEED4 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD35198ECB4900AFEED4 /* CoreData.framework */; };
+		68D0BD39198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68D0BD37198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68D0BD1F198EC9EA00AFEED4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68D0BCF7198EC9EA00AFEED4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68D0BCFE198EC9EA00AFEED4;
+			remoteInfo = inventorymgmt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6830096B198ECCE80012CA7D /* CDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItem.h; path = Models/CDItem.h; sourceTree = "<group>"; };
+		6830096C198ECCE80012CA7D /* CDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItem.m; path = Models/CDItem.m; sourceTree = "<group>"; };
+		6830096F198ECE490012CA7D /* CDItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItemStore.h; path = DataStores/CDItemStore.h; sourceTree = "<group>"; };
+		68300970198ECE490012CA7D /* CDItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItemStore.m; path = DataStores/CDItemStore.m; sourceTree = "<group>"; };
+		68300972198ED0400012CA7D /* INVItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INVItemDetailViewController.xib; sourceTree = "<group>"; };
+		68300974198ED0D80012CA7D /* INVItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVItemDetailViewController.h; sourceTree = "<group>"; };
+		68300975198ED0D80012CA7D /* INVItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVItemDetailViewController.m; sourceTree = "<group>"; };
+		68D0BCFF198EC9EA00AFEED4 /* inventorymgmt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inventorymgmt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D0BD02198EC9EA00AFEED4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		68D0BD06198EC9EA00AFEED4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		68D0BD0A198EC9EA00AFEED4 /* inventorymgmt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inventorymgmt-Info.plist"; sourceTree = "<group>"; };
+		68D0BD0C198EC9EA00AFEED4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68D0BD0E198EC9EA00AFEED4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68D0BD10198EC9EA00AFEED4 /* inventorymgmt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "inventorymgmt-Prefix.pch"; sourceTree = "<group>"; };
+		68D0BD11198EC9EA00AFEED4 /* INVAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INVAppDelegate.h; sourceTree = "<group>"; };
+		68D0BD12198EC9EA00AFEED4 /* INVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = INVAppDelegate.m; sourceTree = "<group>"; };
+		68D0BD14198EC9EA00AFEED4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		68D0BD1A198EC9EA00AFEED4 /* inventorymgmtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = inventorymgmtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68D0BD1B198EC9EA00AFEED4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		68D0BD23198EC9EA00AFEED4 /* inventorymgmtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "inventorymgmtTests-Info.plist"; sourceTree = "<group>"; };
+		68D0BD25198EC9EA00AFEED4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		68D0BD27198EC9EA00AFEED4 /* inventorymgmtTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inventorymgmtTests.m; sourceTree = "<group>"; };
+		68D0BD32198ECA2000AFEED4 /* INVMasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVMasterTableViewController.h; sourceTree = "<group>"; };
+		68D0BD33198ECA2000AFEED4 /* INVMasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVMasterTableViewController.m; sourceTree = "<group>"; };
+		68D0BD35198ECB4900AFEED4 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataInventory.xcdatamodel; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68D0BCFC198EC9EA00AFEED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD36198ECB4900AFEED4 /* CoreData.framework in Frameworks */,
+				68D0BD05198EC9EA00AFEED4 /* CoreGraphics.framework in Frameworks */,
+				68D0BD07198EC9EA00AFEED4 /* UIKit.framework in Frameworks */,
+				68D0BD03198EC9EA00AFEED4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68D0BD17198EC9EA00AFEED4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD1C198EC9EA00AFEED4 /* XCTest.framework in Frameworks */,
+				68D0BD1E198EC9EA00AFEED4 /* UIKit.framework in Frameworks */,
+				68D0BD1D198EC9EA00AFEED4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6830096A198ECC660012CA7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6830096B198ECCE80012CA7D /* CDItem.h */,
+				6830096C198ECCE80012CA7D /* CDItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6830096E198ECE070012CA7D /* DataStores */ = {
+			isa = PBXGroup;
+			children = (
+				6830096F198ECE490012CA7D /* CDItemStore.h */,
+				68300970198ECE490012CA7D /* CDItemStore.m */,
+			);
+			name = DataStores;
+			sourceTree = "<group>";
+		};
+		68D0BCF6198EC9EA00AFEED4 = {
+			isa = PBXGroup;
+			children = (
+				68D0BD08198EC9EA00AFEED4 /* inventorymgmt */,
+				68D0BD21198EC9EA00AFEED4 /* inventorymgmtTests */,
+				68D0BD01198EC9EA00AFEED4 /* Frameworks */,
+				68D0BD00198EC9EA00AFEED4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		68D0BD00198EC9EA00AFEED4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BCFF198EC9EA00AFEED4 /* inventorymgmt.app */,
+				68D0BD1A198EC9EA00AFEED4 /* inventorymgmtTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68D0BD01198EC9EA00AFEED4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BD35198ECB4900AFEED4 /* CoreData.framework */,
+				68D0BD02198EC9EA00AFEED4 /* Foundation.framework */,
+				68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */,
+				68D0BD06198EC9EA00AFEED4 /* UIKit.framework */,
+				68D0BD1B198EC9EA00AFEED4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68D0BD08198EC9EA00AFEED4 /* inventorymgmt */ = {
+			isa = PBXGroup;
+			children = (
+				6830096E198ECE070012CA7D /* DataStores */,
+				6830096A198ECC660012CA7D /* Models */,
+				68D0BD31198EC9F500AFEED4 /* Controller */,
+				68D0BD11198EC9EA00AFEED4 /* INVAppDelegate.h */,
+				68D0BD12198EC9EA00AFEED4 /* INVAppDelegate.m */,
+				68D0BD14198EC9EA00AFEED4 /* Images.xcassets */,
+				68D0BD09198EC9EA00AFEED4 /* Supporting Files */,
+				68D0BD37198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld */,
+			);
+			path = inventorymgmt;
+			sourceTree = "<group>";
+		};
+		68D0BD09198EC9EA00AFEED4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BD0A198EC9EA00AFEED4 /* inventorymgmt-Info.plist */,
+				68D0BD0B198EC9EA00AFEED4 /* InfoPlist.strings */,
+				68D0BD0E198EC9EA00AFEED4 /* main.m */,
+				68D0BD10198EC9EA00AFEED4 /* inventorymgmt-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68D0BD21198EC9EA00AFEED4 /* inventorymgmtTests */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BD27198EC9EA00AFEED4 /* inventorymgmtTests.m */,
+				68D0BD22198EC9EA00AFEED4 /* Supporting Files */,
+			);
+			path = inventorymgmtTests;
+			sourceTree = "<group>";
+		};
+		68D0BD22198EC9EA00AFEED4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BD23198EC9EA00AFEED4 /* inventorymgmtTests-Info.plist */,
+				68D0BD24198EC9EA00AFEED4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68D0BD31198EC9F500AFEED4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68D0BD32198ECA2000AFEED4 /* INVMasterTableViewController.h */,
+				68D0BD33198ECA2000AFEED4 /* INVMasterTableViewController.m */,
+				68300972198ED0400012CA7D /* INVItemDetailViewController.xib */,
+				68300974198ED0D80012CA7D /* INVItemDetailViewController.h */,
+				68300975198ED0D80012CA7D /* INVItemDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68D0BCFE198EC9EA00AFEED4 /* inventorymgmt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68D0BD2B198EC9EA00AFEED4 /* Build configuration list for PBXNativeTarget "inventorymgmt" */;
+			buildPhases = (
+				68D0BCFB198EC9EA00AFEED4 /* Sources */,
+				68D0BCFC198EC9EA00AFEED4 /* Frameworks */,
+				68D0BCFD198EC9EA00AFEED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = inventorymgmt;
+			productName = inventorymgmt;
+			productReference = 68D0BCFF198EC9EA00AFEED4 /* inventorymgmt.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68D0BD19198EC9EA00AFEED4 /* inventorymgmtTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68D0BD2E198EC9EA00AFEED4 /* Build configuration list for PBXNativeTarget "inventorymgmtTests" */;
+			buildPhases = (
+				68D0BD16198EC9EA00AFEED4 /* Sources */,
+				68D0BD17198EC9EA00AFEED4 /* Frameworks */,
+				68D0BD18198EC9EA00AFEED4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68D0BD20198EC9EA00AFEED4 /* PBXTargetDependency */,
+			);
+			name = inventorymgmtTests;
+			productName = inventorymgmtTests;
+			productReference = 68D0BD1A198EC9EA00AFEED4 /* inventorymgmtTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68D0BCF7198EC9EA00AFEED4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = INV;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Technalaa;
+				TargetAttributes = {
+					68D0BD19198EC9EA00AFEED4 = {
+						TestTargetID = 68D0BCFE198EC9EA00AFEED4;
+					};
+				};
+			};
+			buildConfigurationList = 68D0BCFA198EC9EA00AFEED4 /* Build configuration list for PBXProject "inventorymgmt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 68D0BCF6198EC9EA00AFEED4;
+			productRefGroup = 68D0BD00198EC9EA00AFEED4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68D0BCFE198EC9EA00AFEED4 /* inventorymgmt */,
+				68D0BD19198EC9EA00AFEED4 /* inventorymgmtTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68D0BCFD198EC9EA00AFEED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD0D198EC9EA00AFEED4 /* InfoPlist.strings in Resources */,
+				68D0BD15198EC9EA00AFEED4 /* Images.xcassets in Resources */,
+				68300973198ED0400012CA7D /* INVItemDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68D0BD18198EC9EA00AFEED4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD26198EC9EA00AFEED4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68D0BCFB198EC9EA00AFEED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD13198EC9EA00AFEED4 /* INVAppDelegate.m in Sources */,
+				68D0BD34198ECA2000AFEED4 /* INVMasterTableViewController.m in Sources */,
+				68D0BD0F198EC9EA00AFEED4 /* main.m in Sources */,
+				68D0BD39198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld in Sources */,
+				68300976198ED0D80012CA7D /* INVItemDetailViewController.m in Sources */,
+				6830096D198ECCE80012CA7D /* CDItem.m in Sources */,
+				68300971198ECE490012CA7D /* CDItemStore.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68D0BD16198EC9EA00AFEED4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68D0BD28198EC9EA00AFEED4 /* inventorymgmtTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68D0BD20198EC9EA00AFEED4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68D0BCFE198EC9EA00AFEED4 /* inventorymgmt */;
+			targetProxy = 68D0BD1F198EC9EA00AFEED4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68D0BD0B198EC9EA00AFEED4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68D0BD0C198EC9EA00AFEED4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		68D0BD24198EC9EA00AFEED4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68D0BD25198EC9EA00AFEED4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68D0BD29198EC9EA00AFEED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		68D0BD2A198EC9EA00AFEED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68D0BD2C198EC9EA00AFEED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
+				INFOPLIST_FILE = "inventorymgmt/inventorymgmt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		68D0BD2D198EC9EA00AFEED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
+				INFOPLIST_FILE = "inventorymgmt/inventorymgmt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		68D0BD2F198EC9EA00AFEED4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/inventorymgmt.app/inventorymgmt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "inventorymgmtTests/inventorymgmtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		68D0BD30198EC9EA00AFEED4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/inventorymgmt.app/inventorymgmt";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
+				INFOPLIST_FILE = "inventorymgmtTests/inventorymgmtTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68D0BCFA198EC9EA00AFEED4 /* Build configuration list for PBXProject "inventorymgmt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D0BD29198EC9EA00AFEED4 /* Debug */,
+				68D0BD2A198EC9EA00AFEED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68D0BD2B198EC9EA00AFEED4 /* Build configuration list for PBXNativeTarget "inventorymgmt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D0BD2C198EC9EA00AFEED4 /* Debug */,
+				68D0BD2D198EC9EA00AFEED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68D0BD2E198EC9EA00AFEED4 /* Build configuration list for PBXNativeTarget "inventorymgmtTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68D0BD2F198EC9EA00AFEED4 /* Debug */,
+				68D0BD30198EC9EA00AFEED4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		68D0BD37198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */,
+			);
+			currentVersion = 68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */;
+			path = CoreDataInventory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 68D0BCF7198EC9EA00AFEED4 /* Project object */;
+}
