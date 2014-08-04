@@ -13,5 +13,6 @@
 
 @dynamic name;
 @dynamic itemType;
+@dynamic qty;
 
 @end

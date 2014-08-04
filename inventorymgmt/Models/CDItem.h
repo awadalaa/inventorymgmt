@@ -14,5 +14,6 @@
 
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * itemType;
+@property (nonatomic, retain) NSNumber * qty;
 
 @end

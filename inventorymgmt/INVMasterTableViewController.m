@@ -33,6 +33,7 @@
         
         UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem)];
         [[self navigationItem] setRightBarButtonItem:addItem];
+        
     }
     
     return self;
@@ -84,14 +85,16 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // Retrieve our item from our collection of CDItems
     CDItem *item = [items objectAtIndex:[indexPath row]];
     
     //Display the information about our item in the cell
-    [[cell textLabel] setText:[item name]];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@",[[item qty] stringValue],[item name]]];
     [[cell detailTextLabel] setText:[item itemType]];
+        [[cell detailTextLabel] setText:[item itemType]];
     
     return cell;
 }

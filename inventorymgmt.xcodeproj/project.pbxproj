@@ -39,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		680BE812198F274100C92357 /* v0.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v0.2.xcdatamodel; sourceTree = "<group>"; };
 		6830096B198ECCE80012CA7D /* CDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItem.h; path = Models/CDItem.h; sourceTree = "<group>"; };
 		6830096C198ECCE80012CA7D /* CDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItem.m; path = Models/CDItem.m; sourceTree = "<group>"; };
 		6830096F198ECE490012CA7D /* CDItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItemStore.h; path = DataStores/CDItemStore.h; sourceTree = "<group>"; };
@@ -517,9 +518,10 @@
 		68D0BD37198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				680BE812198F274100C92357 /* v0.2.xcdatamodel */,
 				68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */,
 			);
-			currentVersion = 68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */;
+			currentVersion = 680BE812198F274100C92357 /* v0.2.xcdatamodel */;
 			path = CoreDataInventory.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

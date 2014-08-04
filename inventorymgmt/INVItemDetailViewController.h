@@ -13,7 +13,6 @@
 @interface INVItemDetailViewController : UIViewController <UITextFieldDelegate,UIPickerViewDelegate>
 {
     CDItem *currentItem; //a reference to our current item
-    NSMutableArray *qty;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;

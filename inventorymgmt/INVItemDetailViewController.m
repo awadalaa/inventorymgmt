@@ -23,7 +23,6 @@
     
     if (self)
     {
-        //hold on to the reference for our item
         currentItem = item;
     }
     
@@ -45,7 +44,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+    NSLog(@"%@",currentItem);
     //load text field names
     [nameTextField setText:[currentItem name]];
     [itemTypeTextField setText:[currentItem itemType]];
@@ -54,7 +53,13 @@
     self.qtyPickerField.delegate = self;
 
 }
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.qtyPickerField reloadAllComponents];
+    [self.qtyPickerField selectRow:[[currentItem qty] integerValue]     inComponent:0 animated:YES];
 
+}
 - (void)viewWillDisappear:(BOOL)animated
 {
     //Keep the regular behavior
@@ -107,5 +112,13 @@
     return [NSString stringWithFormat:@"%ld", (row+PICKER_MIN)];
 }
 
+// Catpure the picker view selection
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [currentItem setQty:[NSNumber numberWithInteger:row+PICKER_MIN]];
+
+    
+    NSLog(@"%@", currentItem);
+}
 @end
 
