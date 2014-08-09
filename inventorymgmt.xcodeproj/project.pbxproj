@@ -10,8 +10,8 @@
 		6815EC96198F52A60042ACF5 /* INVNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6815EC95198F52A60042ACF5 /* INVNavigationController.m */; };
 		6830096D198ECCE80012CA7D /* CDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830096C198ECCE80012CA7D /* CDItem.m */; };
 		68300971198ECE490012CA7D /* CDItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300970198ECE490012CA7D /* CDItemStore.m */; };
-		68300973198ED0400012CA7D /* INVItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68300972198ED0400012CA7D /* INVItemDetailViewController.xib */; };
-		68300976198ED0D80012CA7D /* INVItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300975198ED0D80012CA7D /* INVItemDetailViewController.m */; };
+		68300976198ED0D80012CA7D /* INVFieldTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300975198ED0D80012CA7D /* INVFieldTableViewController.m */; };
+		68636E751996D13D00B13F82 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 68636E741996D13D00B13F82 /* FormField.m */; };
 		68D0BD03198EC9EA00AFEED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD02198EC9EA00AFEED4 /* Foundation.framework */; };
 		68D0BD05198EC9EA00AFEED4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */; };
 		68D0BD07198EC9EA00AFEED4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD06198EC9EA00AFEED4 /* UIKit.framework */; };
@@ -47,9 +47,10 @@
 		6830096C198ECCE80012CA7D /* CDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItem.m; path = Models/CDItem.m; sourceTree = "<group>"; };
 		6830096F198ECE490012CA7D /* CDItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItemStore.h; path = DataStores/CDItemStore.h; sourceTree = "<group>"; };
 		68300970198ECE490012CA7D /* CDItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItemStore.m; path = DataStores/CDItemStore.m; sourceTree = "<group>"; };
-		68300972198ED0400012CA7D /* INVItemDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INVItemDetailViewController.xib; sourceTree = "<group>"; };
-		68300974198ED0D80012CA7D /* INVItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVItemDetailViewController.h; sourceTree = "<group>"; };
-		68300975198ED0D80012CA7D /* INVItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVItemDetailViewController.m; sourceTree = "<group>"; };
+		68300974198ED0D80012CA7D /* INVFieldTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVFieldTableViewController.h; sourceTree = "<group>"; };
+		68300975198ED0D80012CA7D /* INVFieldTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVFieldTableViewController.m; sourceTree = "<group>"; };
+		68636E731996D13D00B13F82 /* FormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormField.h; sourceTree = "<group>"; };
+		68636E741996D13D00B13F82 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = "<group>"; };
 		68D0BCFF198EC9EA00AFEED4 /* inventorymgmt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inventorymgmt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D0BD02198EC9EA00AFEED4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +103,8 @@
 			children = (
 				6830096B198ECCE80012CA7D /* CDItem.h */,
 				6830096C198ECCE80012CA7D /* CDItem.m */,
+				68636E731996D13D00B13F82 /* FormField.h */,
+				68636E741996D13D00B13F82 /* FormField.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -195,9 +198,8 @@
 			children = (
 				68D0BD32198ECA2000AFEED4 /* INVMasterTableViewController.h */,
 				68D0BD33198ECA2000AFEED4 /* INVMasterTableViewController.m */,
-				68300972198ED0400012CA7D /* INVItemDetailViewController.xib */,
-				68300974198ED0D80012CA7D /* INVItemDetailViewController.h */,
-				68300975198ED0D80012CA7D /* INVItemDetailViewController.m */,
+				68300974198ED0D80012CA7D /* INVFieldTableViewController.h */,
+				68300975198ED0D80012CA7D /* INVFieldTableViewController.m */,
 				6815EC94198F52A60042ACF5 /* INVNavigationController.h */,
 				6815EC95198F52A60042ACF5 /* INVNavigationController.m */,
 			);
@@ -282,7 +284,6 @@
 			files = (
 				68D0BD0D198EC9EA00AFEED4 /* InfoPlist.strings in Resources */,
 				68D0BD15198EC9EA00AFEED4 /* Images.xcassets in Resources */,
-				68300973198ED0400012CA7D /* INVItemDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +306,8 @@
 				68D0BD34198ECA2000AFEED4 /* INVMasterTableViewController.m in Sources */,
 				68D0BD0F198EC9EA00AFEED4 /* main.m in Sources */,
 				68D0BD39198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld in Sources */,
-				68300976198ED0D80012CA7D /* INVItemDetailViewController.m in Sources */,
+				68636E751996D13D00B13F82 /* FormField.m in Sources */,
+				68300976198ED0D80012CA7D /* INVFieldTableViewController.m in Sources */,
 				6815EC96198F52A60042ACF5 /* INVNavigationController.m in Sources */,
 				6830096D198ECCE80012CA7D /* CDItem.m in Sources */,
 				68300971198ECE490012CA7D /* CDItemStore.m in Sources */,
@@ -431,6 +433,7 @@
 				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
 				INFOPLIST_FILE = "inventorymgmt/inventorymgmt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -444,6 +447,7 @@
 				GCC_PREFIX_HEADER = "inventorymgmt/inventorymgmt-Prefix.pch";
 				INFOPLIST_FILE = "inventorymgmt/inventorymgmt-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

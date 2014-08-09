@@ -9,6 +9,7 @@
 #import "INVAppDelegate.h"
 #import "INVMasterTableViewController.h"
 #import "INVNavigationController.h"
+
 @implementation INVAppDelegate
 
 - (NSManagedObjectModel *)sharedModel

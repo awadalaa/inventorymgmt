@@ -7,7 +7,7 @@
 //
 
 #import "INVMasterTableViewController.h"
-#import "INVItemDetailViewController.h"
+#import "INVFieldTableViewController.h"
 #import "CDItem.h"
 #import "CDItemStore.h"
 
@@ -58,7 +58,7 @@
     CDItem *item = [itemStore createItem];
     
     //Create an instance of the detail view and show it
-    INVItemDetailViewController *detailView = [[INVItemDetailViewController alloc] initWithItem:item];
+    INVFieldTableViewController *detailView = [[INVFieldTableViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
 }
 
@@ -123,7 +123,6 @@
     //get the item that was selected
     CDItem *item = nil;
     if (self.searchDisplayController.active) {
-        NSLog(@"indexpath:%ld searchIndex:%ld",(long)indexPath.row, (long)[[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row]);
         indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
         item = [searchData objectAtIndex:indexPath.row];
     } else {
@@ -132,7 +131,7 @@
 
     
     //load the item on the screen
-    INVItemDetailViewController *detailView = [[INVItemDetailViewController alloc] initWithItem:item];
+    INVFieldTableViewController *detailView = [[INVFieldTableViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
 }
 
