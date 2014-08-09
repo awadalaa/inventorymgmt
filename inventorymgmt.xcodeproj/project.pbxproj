@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6815EC96198F52A60042ACF5 /* INVNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6815EC95198F52A60042ACF5 /* INVNavigationController.m */; };
 		6830096D198ECCE80012CA7D /* CDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830096C198ECCE80012CA7D /* CDItem.m */; };
 		68300971198ECE490012CA7D /* CDItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300970198ECE490012CA7D /* CDItemStore.m */; };
 		68300973198ED0400012CA7D /* INVItemDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68300972198ED0400012CA7D /* INVItemDetailViewController.xib */; };
@@ -40,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		680BE812198F274100C92357 /* v0.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v0.2.xcdatamodel; sourceTree = "<group>"; };
+		6815EC94198F52A60042ACF5 /* INVNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVNavigationController.h; sourceTree = "<group>"; };
+		6815EC95198F52A60042ACF5 /* INVNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVNavigationController.m; sourceTree = "<group>"; };
 		6830096B198ECCE80012CA7D /* CDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItem.h; path = Models/CDItem.h; sourceTree = "<group>"; };
 		6830096C198ECCE80012CA7D /* CDItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItem.m; path = Models/CDItem.m; sourceTree = "<group>"; };
 		6830096F198ECE490012CA7D /* CDItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDItemStore.h; path = DataStores/CDItemStore.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				68300972198ED0400012CA7D /* INVItemDetailViewController.xib */,
 				68300974198ED0D80012CA7D /* INVItemDetailViewController.h */,
 				68300975198ED0D80012CA7D /* INVItemDetailViewController.m */,
+				6815EC94198F52A60042ACF5 /* INVNavigationController.h */,
+				6815EC95198F52A60042ACF5 /* INVNavigationController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 				68D0BD0F198EC9EA00AFEED4 /* main.m in Sources */,
 				68D0BD39198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld in Sources */,
 				68300976198ED0D80012CA7D /* INVItemDetailViewController.m in Sources */,
+				6815EC96198F52A60042ACF5 /* INVNavigationController.m in Sources */,
 				6830096D198ECCE80012CA7D /* CDItem.m in Sources */,
 				68300971198ECE490012CA7D /* CDItemStore.m in Sources */,
 			);

@@ -51,8 +51,18 @@
     self.nameTextField.delegate = self;
     self.itemTypeTextField.delegate = self;
     self.qtyPickerField.delegate = self;
-
+    nameTextField.returnKeyType = UIReturnKeyDone;
+    
 }
+
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+    
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -88,13 +98,6 @@
     NSLog(@"%@", currentItem);
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    // Dismissed the keyboard when the user selects the Done button on the keyboard
-    [textField resignFirstResponder];
-    return NO;
-}
-
 #pragma mark - UIPickerViewDelegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -109,7 +112,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return [NSString stringWithFormat:@"%ld", (row+PICKER_MIN)];
+    return [NSString stringWithFormat:@"%d", (row+PICKER_MIN)];
 }
 
 // Catpure the picker view selection

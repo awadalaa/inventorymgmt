@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface INVMasterTableViewController : UITableViewController
+@interface INVMasterTableViewController : UITableViewController <UISearchBarDelegate, UISearchDisplayDelegate>
 {
     NSArray *items;
-    NSArray *rows;
+    NSMutableArray *searchData;
+    UISearchBar *searchBar;
+    UISearchDisplayController *searchDisplayController;
 }
 
 

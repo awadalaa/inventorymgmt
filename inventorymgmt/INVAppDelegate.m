@@ -8,6 +8,7 @@
 
 #import "INVAppDelegate.h"
 #import "INVMasterTableViewController.h"
+#import "INVNavigationController.h"
 @implementation INVAppDelegate
 
 - (NSManagedObjectModel *)sharedModel
@@ -63,7 +64,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     INVMasterTableViewController *masterTableView = [[INVMasterTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    UINavigationController *tableNav = [[UINavigationController alloc] initWithRootViewController:masterTableView];
+    INVNavigationController *tableNav = [[INVNavigationController alloc] initWithRootViewController:masterTableView];
     [[self window] setRootViewController:tableNav];
     
     

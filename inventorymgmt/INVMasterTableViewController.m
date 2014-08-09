@@ -11,7 +11,17 @@
 #import "CDItem.h"
 #import "CDItemStore.h"
 
-@implementation INVMasterTableViewController
+@implementation INVMasterTableViewController{
+    BOOL isSearching;
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self loadSearchView];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -29,10 +39,10 @@
     {
         [self setTitle:@"Inventory List"];
         
-        rows = [[NSArray alloc] init]; 
-        
         UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem)];
         [[self navigationItem] setRightBarButtonItem:addItem];
+        
+        searchData = [[NSMutableArray alloc] init];
         
     }
     
@@ -50,7 +60,6 @@
     //Create an instance of the detail view and show it
     INVItemDetailViewController *detailView = [[INVItemDetailViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
-    
 }
 
 - (void)refreshTable
@@ -72,8 +81,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    //Return the number of rows in the section. Because we only have one section rows will represent the rows in that section
-    return [items count];
+    
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [searchData count];
+        
+    } else {
+        return [items count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,13 +102,18 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // Retrieve our item from our collection of CDItems
-    CDItem *item = [items objectAtIndex:[indexPath row]];
+    // Display recipe in the table cell
+    CDItem *item  = nil;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        item = [searchData objectAtIndex:indexPath.row];
+    } else {
+        item = [items objectAtIndex:[indexPath row]];
+    }
     
     //Display the information about our item in the cell
     [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@",[[item qty] stringValue],[item name]]];
     [[cell detailTextLabel] setText:[item itemType]];
-        [[cell detailTextLabel] setText:[item itemType]];
+    [[cell detailTextLabel] setText:[item itemType]];
     
     return cell;
 }
@@ -102,11 +121,48 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //get the item that was selected
-    CDItem *item = [items objectAtIndex:[indexPath row]];
+    CDItem *item = nil;
+    if (self.searchDisplayController.active) {
+        NSLog(@"indexpath:%ld searchIndex:%ld",(long)indexPath.row, (long)[[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] row]);
+        indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+        item = [searchData objectAtIndex:indexPath.row];
+    } else {
+        item = [items objectAtIndex:indexPath.row];
+    }
+
     
     //load the item on the screen
     INVItemDetailViewController *detailView = [[INVItemDetailViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
+}
+
+#pragma mark - UISearchView delegates
+
+-(void)loadSearchView {
+    
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 64)];
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    searchDisplayController.searchResultsDelegate = self;
+    self.tableView.tableHeaderView = searchBar;
+    
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
+    searchData = (NSMutableArray *)[items filteredArrayUsingPredicate:resultPredicate];
+}
+
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    
+    return YES;
 }
 
 @end
