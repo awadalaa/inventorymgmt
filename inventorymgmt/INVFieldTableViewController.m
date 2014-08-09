@@ -168,31 +168,34 @@
 
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"1234567890.-"] invertedSet];
-    if ([string rangeOfCharacterFromSet:cs].location == NSNotFound) {
-        
-        NSString *newString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
-        
-        // check number of decimal chars used (maximum of one)
-        NSArray *array = [newString componentsSeparatedByString:@"."];
-        if ([array count] <= 2) {
+    if(textField.keyboardType==UIKeyboardTypeDecimalPad){
+        NSCharacterSet *cs = [[NSCharacterSet characterSetWithCharactersInString:@"1234567890.-"] invertedSet];
+        if ([string rangeOfCharacterFromSet:cs].location == NSNotFound) {
             
-            // check negative chars (maximum of one AND it must be at the front)
-            array = [newString componentsSeparatedByString:@"-"];
+            NSString *newString = [[textField text] stringByReplacingCharactersInRange:range withString:string];
             
-            if (1 == [array count]) {
-                return YES; // no negatives
-            } else if (2 == [array count]) {
-                return ('-' == [newString characterAtIndex:0]); // return YES if first char is negative only
+            // check number of decimal chars used (maximum of one)
+            NSArray *array = [newString componentsSeparatedByString:@"."];
+            if ([array count] <= 2) {
+                
+                // check negative chars (maximum of one AND it must be at the front)
+                array = [newString componentsSeparatedByString:@"-"];
+                
+                if (1 == [array count]) {
+                    return YES; // no negatives
+                } else if (2 == [array count]) {
+                    return ('-' == [newString characterAtIndex:0]); // return YES if first char is negative only
+                } else {
+                    return NO; // too many negative chars
+                }
             } else {
-                return NO; // too many negative chars
+                return NO; // too many decimal chars
             }
         } else {
-            return NO; // too many decimal chars
+            return NO; // invalid character
         }
-    } else {
-        return NO; // invalid character
     }
+    return YES;
 }
 
 #pragma mark - UITableViewDelegate
