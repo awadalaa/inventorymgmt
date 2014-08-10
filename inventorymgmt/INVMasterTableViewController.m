@@ -111,10 +111,35 @@
     }
     
     //Display the information about our item in the cell
-    [[cell textLabel] setText:[NSString stringWithFormat:@"%@ %@",[[item qty] stringValue],[item name]]];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"%@",[item name]]];
     [[cell detailTextLabel] setText:[item itemType]];
     [[cell detailTextLabel] setText:[item itemType]];
     
+    
+    /* Create a UILabel.
+     Set textAlignment as UITextAlignmentCenter.
+     Change its cornerRadius.
+     Add a drop shadow using shadowColor, shadowOffset(a positive offest) ,etc.,
+     Set label's text.
+     Resize label's width to fit the text.
+     Set it as cell's accessoryView.*/
+    
+    if (item.qty){
+        UILabel *badge ;//[[UILabel alloc] init];
+        if([item.qty intValue] < 10)
+            badge = [[UILabel alloc]initWithFrame:CGRectMake(10, -10, 40, 30)];
+        else if([item.qty integerValue] < 100)
+            badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 40, 30)];
+        else if([item.qty integerValue] < 1000)
+            badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 40, 30)];
+        badge.layer.cornerRadius = 5;
+        badge.layer.masksToBounds = YES;
+        badge.text = [NSString stringWithFormat:@"%@",item.qty];
+        badge.textAlignment = NSTextAlignmentCenter;
+        badge.textColor = [UIColor whiteColor];
+        badge.backgroundColor = [UIColor colorWithRed:89/255.0f green:174/255.0f blue:235/255.0f alpha:1.0f];
+        cell.accessoryView = badge;
+    }
     return cell;
 }
 

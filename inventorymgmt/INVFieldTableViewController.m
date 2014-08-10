@@ -53,7 +53,6 @@
     stockQtyField_ = [self makeTextField:@"original qty" placeholder:@"50" type:@"Number" text:nil];
     priceField_ = [self makeTextField:@"price" placeholder:@"1.25" type:@"Number" text:nil];
     costField_ = [self makeTextField:@"cost" placeholder:@"0.75" type:@"Number" text:nil];
-//    currencyField_ = [self makeTextField:@"currency" placeholder:@"USD" type:@"Stirng" text:nil];
     colorField_ = [self makeTextField:@"color" placeholder:@"red" type:@"String" text:nil];
     weightField_ = [self makeTextField:@"weight" placeholder:@"13" type:@"Number" text:nil];
     fields = [NSArray arrayWithObjects:@[nameField_,itemField_,currentQtyField_,stockQtyField_],
@@ -232,10 +231,12 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:@"Cell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.textLabel.text = [fields[indexPath.section][indexPath.row] name];
     [cell addSubview:[fields[indexPath.section][indexPath.row] field]];
     return cell;
+    
 }
 
 
