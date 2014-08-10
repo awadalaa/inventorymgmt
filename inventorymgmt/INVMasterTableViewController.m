@@ -20,6 +20,8 @@
 {
     [super viewDidLoad];
     [self loadSearchView];
+    
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
 
@@ -126,19 +128,22 @@
     
     if (item.qty){
         UILabel *badge ;//[[UILabel alloc] init];
-        if([item.qty intValue] < 10)
-            badge = [[UILabel alloc]initWithFrame:CGRectMake(10, -10, 40, 30)];
-        else if([item.qty integerValue] < 100)
-            badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 40, 30)];
-        else if([item.qty integerValue] < 1000)
-            badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 40, 30)];
-        badge.layer.cornerRadius = 5;
-        badge.layer.masksToBounds = YES;
-        badge.text = [NSString stringWithFormat:@"%@",item.qty];
-        badge.textAlignment = NSTextAlignmentCenter;
-        badge.textColor = [UIColor whiteColor];
-        badge.backgroundColor = [UIColor colorWithRed:89/255.0f green:174/255.0f blue:235/255.0f alpha:1.0f];
-        cell.accessoryView = badge;
+    if([item.qty intValue] < 10)
+        badge = [[UILabel alloc]initWithFrame:CGRectMake(10, -10, 40, 30)];
+    else if([item.qty integerValue] < 1000)
+        badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 40, 30)];
+    else if([item.qty integerValue] < 10000)
+        badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 50, 30)];
+    else
+        badge = [[UILabel alloc]initWithFrame:CGRectMake(5, -10, 60, 30)];
+    
+    badge.layer.cornerRadius = 5;
+    badge.layer.masksToBounds = YES;
+    badge.text = [NSString stringWithFormat:@"%@",item.qty];
+    badge.textAlignment = NSTextAlignmentCenter;
+    badge.textColor = [UIColor whiteColor];
+    badge.backgroundColor = [UIColor colorWithRed:89/255.0f green:174/255.0f blue:235/255.0f alpha:1.0f];
+    cell.accessoryView = badge;
     }
     return cell;
 }
@@ -158,6 +163,30 @@
     //load the item on the screen
     INVFieldTableViewController *detailView = [[INVFieldTableViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
+}
+
+
+
+// Override to support conditional editing of the table view.
+// This only needs to be implemented if you are going to be returning NO
+// for some items. By default, all items are editable.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+/*        //Create a new instance of the item store
+        CDItemStore *itemStore = [[CDItemStore alloc] init];
+        //Delete the current object
+        [itemStore deleteItem:[items objectAtIndex:indexPath.row]];
+        //Navigate back to the table view
+        [[self navigationController] popViewControllerAnimated:YES];
+ NOT WORKING
+ */
+    }
 }
 
 #pragma mark - UISearchView delegates

@@ -13,6 +13,8 @@
 @implementation INVFieldTableViewController{
     NSArray *fields; /* of FormFields */
     NSArray *fieldSections;
+    NSNumberFormatter * f;
+    
 }
 
 - (id)initWithItem:(CDItem *)item
@@ -28,8 +30,8 @@
 }
 
 
-/*
-- (IBAction)deleteItem:(id)sender
+
+- (void)deleteItem
 {
     //Create a new instance of the item store
     CDItemStore *itemStore = [[CDItemStore alloc] init];
@@ -38,23 +40,33 @@
     //Navigate back to the table view
     [[self navigationController] popViewControllerAnimated:YES];
 }
-*/
+
 
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self loadFields];
-    
+    f = [[NSNumberFormatter alloc] init];
+    self.navigationController.navigationItem.title = @"Inventory Item";
+    if(currentItem.name) [nameField_.field setText:[currentItem name]];
+    if(currentItem.itemType) [itemField_.field setText:[currentItem itemType]];
+    if(currentItem.qty) [currentQtyField_.field setText:[[currentItem qty] stringValue]];
+    NSLog(@" origqty %@",[[currentItem originalQty] stringValue]);
+    if(currentItem.originalQty) [currentQtyField_.field setText:[[currentItem originalQty] stringValue]];
+    if(currentItem.price) [currentQtyField_.field setText:[[currentItem price] stringValue]];
+    if(currentItem.cost) [currentQtyField_.field setText:[[currentItem cost] stringValue]];
+    if(currentItem.color) [currentQtyField_.field setText:[currentItem color]];
+    if(currentItem.weight) [currentQtyField_.field setText:[[currentItem weight] stringValue]];
 }
 
 -(void)loadFields{
     nameField_ = [self makeTextField:@"name" placeholder:@"fleece" type:@"String" text:nil];
     itemField_ = [self makeTextField:@"category" placeholder:@"clothing" type:@"String" text:nil];
-    currentQtyField_ = [self makeTextField:@"current qty" placeholder:@"30" type:@"Number" text:nil];
-    stockQtyField_ = [self makeTextField:@"original qty" placeholder:@"50" type:@"Number" text:nil];
-    priceField_ = [self makeTextField:@"price" placeholder:@"1.25" type:@"Number" text:nil];
-    costField_ = [self makeTextField:@"cost" placeholder:@"0.75" type:@"Number" text:nil];
-    colorField_ = [self makeTextField:@"color" placeholder:@"red" type:@"String" text:nil];
-    weightField_ = [self makeTextField:@"weight" placeholder:@"13" type:@"Number" text:nil];
+    currentQtyField_ = [self makeTextField:@"current qty" placeholder:@"30" type:@"Number" text:[[currentItem qty] stringValue]];
+    stockQtyField_ = [self makeTextField:@"original qty" placeholder:@"50" type:@"Number" text:[[currentItem originalQty] stringValue]];
+    priceField_ = [self makeTextField:@"price" placeholder:@"1.25" type:@"Number" text:[[currentItem price] stringValue]];
+    costField_ = [self makeTextField:@"cost" placeholder:@"0.75" type:@"Number" text:[[currentItem cost] stringValue]];
+    colorField_ = [self makeTextField:@"color" placeholder:@"red" type:@"String" text:[currentItem color]];
+    weightField_ = [self makeTextField:@"weight" placeholder:@"13" type:@"Number" text:[[currentItem weight] stringValue]];
     fields = [NSArray arrayWithObjects:@[nameField_,itemField_,currentQtyField_,stockQtyField_],
               @[priceField_,costField_],@[colorField_,weightField_], nil];
     fieldSections = [NSArray arrayWithObjects: @"Inventory",@"Price",@"Details",nil];
@@ -65,16 +77,20 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSLog(@"%@",currentItem);
+    NSLog(@"here we are %@",currentItem);
     //load text field names
 
-    if(currentItem.name) [nameField_.field setText:[currentItem name]];
-    if(currentItem.itemType) [itemField_.field setText:[currentItem itemType]];
-    if(currentItem.qty) [currentQtyField_.field setText:[[currentItem qty] stringValue]];
     nameField_.field.delegate = self;
     itemField_.field.delegate = self;
     currentQtyField_.field.delegate = self;
+    stockQtyField_.field.delegate = self;
+    priceField_.field.delegate = self;
+    costField_.field.delegate = self;
+    colorField_.field.delegate = self;
+    weightField_.field.delegate = self;
     nameField_.field.returnKeyType = UIReturnKeyDone;
+    itemField_.field.returnKeyType = UIReturnKeyDone;
+    colorField_.field.returnKeyType = UIReturnKeyDone;
 }
 
 
@@ -97,6 +113,7 @@
     //Force the keyboard to dismiss so our changes are saved to our item
     [nameField_.field resignFirstResponder];
     [itemField_.field resignFirstResponder];
+    [weightField_.field resignFirstResponder];
     [currentQtyField_.field resignFirstResponder];
     [stockQtyField_.field resignFirstResponder];
 }
@@ -146,7 +163,7 @@
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    NSLog(@"in textFieldDidEndEditing");
+    [f setNumberStyle:NSNumberFormatterDecimalStyle];
     if ([textField isEqual:nameField_.field])
     {
         [currentItem setName:[textField text]];
@@ -157,10 +174,27 @@
     }
     else if ([textField isEqual:currentQtyField_.field])
     {
-        NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
-        [f setNumberStyle:NSNumberFormatterDecimalStyle];
-        NSNumber * qty = [f numberFromString:textField.text];
-        [currentItem setQty:qty];
+        [currentItem setQty:[f numberFromString:textField.text]];
+    }
+    else if ([textField isEqual:stockQtyField_.field])
+    {
+        [currentItem setOriginalQty:[f numberFromString:textField.text]];
+    }
+    else if ([textField isEqual:priceField_.field])
+    {
+        [currentItem setPrice:[f numberFromString:textField.text]];
+    }
+    else if ([textField isEqual:costField_.field])
+    {
+        [currentItem setCost:[f numberFromString:textField.text]];
+    }
+    else if ([textField isEqual:colorField_.field])
+    {
+        [currentItem setColor:textField.text];
+    }
+    else if ([textField isEqual:weightField_.field])
+    {
+        [currentItem setWeight:[f numberFromString:textField.text]];
     }
     NSLog(@"%@", currentItem);
 }
@@ -203,12 +237,12 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
     /* Create custom view to display section header... */
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
-    [label setFont:[UIFont boldSystemFontOfSize:12]];
+    [label setFont:[UIFont boldSystemFontOfSize:15]];
     NSString *string =[fieldSections objectAtIndex:section];
     /* Section header is in 0th index... */
     [label setText:string];
     [view addSubview:label];
-    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background color...
+    [view setBackgroundColor:[UIColor colorWithRed:236/255.0 green:240/255.0 blue:241/255.0 alpha:0.8]]; //your background color...
     return view;
 }
 

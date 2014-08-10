@@ -12,7 +12,11 @@
 @implementation CDItem
 
 @dynamic name;
-@dynamic itemType;
+@dynamic itemType; //category
 @dynamic qty;
-
+@dynamic originalQty;
+@dynamic price;
+@dynamic cost;
+@dynamic color;
+@dynamic weight;
 @end

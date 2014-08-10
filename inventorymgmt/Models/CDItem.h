@@ -15,5 +15,9 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * itemType;
 @property (nonatomic, retain) NSNumber * qty;
-
+@property (nonatomic, retain) NSNumber * originalQty;
+@property (nonatomic, retain) NSNumber * price;
+@property (nonatomic, retain) NSNumber * cost;
+@property (nonatomic, retain) NSString * color;
+@property (nonatomic, retain) NSNumber * weight;
 @end

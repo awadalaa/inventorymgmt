@@ -11,6 +11,7 @@
 		6830096D198ECCE80012CA7D /* CDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6830096C198ECCE80012CA7D /* CDItem.m */; };
 		68300971198ECE490012CA7D /* CDItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300970198ECE490012CA7D /* CDItemStore.m */; };
 		68300976198ED0D80012CA7D /* INVFieldTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68300975198ED0D80012CA7D /* INVFieldTableViewController.m */; };
+		684E74B4199709A000658A1D /* UIFont+SystemFontOverride.m in Sources */ = {isa = PBXBuildFile; fileRef = 684E74B3199709A000658A1D /* UIFont+SystemFontOverride.m */; };
 		68636E751996D13D00B13F82 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = 68636E741996D13D00B13F82 /* FormField.m */; };
 		68D0BD03198EC9EA00AFEED4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD02198EC9EA00AFEED4 /* Foundation.framework */; };
 		68D0BD05198EC9EA00AFEED4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D0BD04198EC9EA00AFEED4 /* CoreGraphics.framework */; };
@@ -49,6 +50,9 @@
 		68300970198ECE490012CA7D /* CDItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDItemStore.m; path = DataStores/CDItemStore.m; sourceTree = "<group>"; };
 		68300974198ED0D80012CA7D /* INVFieldTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INVFieldTableViewController.h; sourceTree = "<group>"; };
 		68300975198ED0D80012CA7D /* INVFieldTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INVFieldTableViewController.m; sourceTree = "<group>"; };
+		684E74B1199701D800658A1D /* v0. 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "v0. 3.xcdatamodel"; sourceTree = "<group>"; };
+		684E74B2199709A000658A1D /* UIFont+SystemFontOverride.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+SystemFontOverride.h"; sourceTree = "<group>"; };
+		684E74B3199709A000658A1D /* UIFont+SystemFontOverride.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+SystemFontOverride.m"; sourceTree = "<group>"; };
 		68636E731996D13D00B13F82 /* FormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormField.h; sourceTree = "<group>"; };
 		68636E741996D13D00B13F82 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = "<group>"; };
 		68D0BCFF198EC9EA00AFEED4 /* inventorymgmt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = inventorymgmt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +175,8 @@
 				68D0BD0B198EC9EA00AFEED4 /* InfoPlist.strings */,
 				68D0BD0E198EC9EA00AFEED4 /* main.m */,
 				68D0BD10198EC9EA00AFEED4 /* inventorymgmt-Prefix.pch */,
+				684E74B2199709A000658A1D /* UIFont+SystemFontOverride.h */,
+				684E74B3199709A000658A1D /* UIFont+SystemFontOverride.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			files = (
 				68D0BD13198EC9EA00AFEED4 /* INVAppDelegate.m in Sources */,
 				68D0BD34198ECA2000AFEED4 /* INVMasterTableViewController.m in Sources */,
+				684E74B4199709A000658A1D /* UIFont+SystemFontOverride.m in Sources */,
 				68D0BD0F198EC9EA00AFEED4 /* main.m in Sources */,
 				68D0BD39198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld in Sources */,
 				68636E751996D13D00B13F82 /* FormField.m in Sources */,
@@ -528,10 +535,11 @@
 		68D0BD37198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				684E74B1199701D800658A1D /* v0. 3.xcdatamodel */,
 				680BE812198F274100C92357 /* v0.2.xcdatamodel */,
 				68D0BD38198ECB8C00AFEED4 /* CoreDataInventory.xcdatamodel */,
 			);
-			currentVersion = 680BE812198F274100C92357 /* v0.2.xcdatamodel */;
+			currentVersion = 684E74B1199701D800658A1D /* v0. 3.xcdatamodel */;
 			path = CoreDataInventory.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
