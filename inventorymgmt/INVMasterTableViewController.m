@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     [self loadSearchView];
-    
+    [self.tableView reloadData];
     self.tableView.allowsMultipleSelectionDuringEditing = NO;
 }
 
@@ -28,7 +28,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
+
     [self refreshTable];
 }
 
@@ -53,13 +53,8 @@
 
 - (void)addItem
 {
-    //Create an instance of our data store
     CDItemStore *itemStore = [[CDItemStore alloc] init];
-    
-    //Get a new CDItem
     CDItem *item = [itemStore createItem];
-    
-    //Create an instance of the detail view and show it
     INVFieldTableViewController *detailView = [[INVFieldTableViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
 }
@@ -67,17 +62,13 @@
 - (void)refreshTable
 {
     CDItemStore *itemStore = [[CDItemStore alloc] init];
-    [itemStore saveChanges]; //save all changes
-    
+    [itemStore saveChanges];
     items = [itemStore allItems];
-    
     [[self tableView] reloadData];
 }
 
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    //Return the number of sections in the table we only have one right now.
     return 1;
 }
 
@@ -94,17 +85,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Retrieve our cell if one has already been created in memory.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     
-    //If no cell is available create a new one
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"Cell"];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // Display recipe in the table cell
     CDItem *item  = nil;
     if (tableView == self.searchDisplayController.searchResultsTableView) {
         item = [searchData objectAtIndex:indexPath.row];
@@ -112,22 +100,12 @@
         item = [items objectAtIndex:[indexPath row]];
     }
     
-    //Display the information about our item in the cell
     [[cell textLabel] setText:[NSString stringWithFormat:@"%@",[item name]]];
     [[cell detailTextLabel] setText:[item itemType]];
     [[cell detailTextLabel] setText:[item itemType]];
     
-    
-    /* Create a UILabel.
-     Set textAlignment as UITextAlignmentCenter.
-     Change its cornerRadius.
-     Add a drop shadow using shadowColor, shadowOffset(a positive offest) ,etc.,
-     Set label's text.
-     Resize label's width to fit the text.
-     Set it as cell's accessoryView.*/
-    
     if (item.qty){
-        UILabel *badge ;//[[UILabel alloc] init];
+        UILabel *badge;
     if([item.qty intValue] < 10)
         badge = [[UILabel alloc]initWithFrame:CGRectMake(10, -10, 40, 30)];
     else if([item.qty integerValue] < 1000)
@@ -150,7 +128,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //get the item that was selected
     CDItem *item = nil;
     if (self.searchDisplayController.active) {
         indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
@@ -159,33 +136,25 @@
         item = [items objectAtIndex:indexPath.row];
     }
 
-    
-    //load the item on the screen
     INVFieldTableViewController *detailView = [[INVFieldTableViewController alloc] initWithItem:item];
     [[self navigationController] pushViewController:detailView animated:YES];
 }
 
-
-
-// Override to support conditional editing of the table view.
-// This only needs to be implemented if you are going to be returning NO
-// for some items. By default, all items are editable.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return YES if you want the specified item to be editable.
     return YES;
 }
 
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [self.tableView setEditing:editing animated:animated];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-/*        //Create a new instance of the item store
-        CDItemStore *itemStore = [[CDItemStore alloc] init];
-        //Delete the current object
-        [itemStore deleteItem:[items objectAtIndex:indexPath.row]];
-        //Navigate back to the table view
-        [[self navigationController] popViewControllerAnimated:YES];
- NOT WORKING
- */
+        [self deleteItem:[items objectAtIndex:indexPath.row] atIndexPath:indexPath];
     }
 }
 
@@ -214,8 +183,23 @@
                                scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
                                       objectAtIndex:[self.searchDisplayController.searchBar
                                                      selectedScopeButtonIndex]]];
-    
     return YES;
 }
+
+
+
+- (void)deleteItem:(CDItem *)cdItem atIndexPath:(NSIndexPath *)indexPath
+{
+    CDItemStore *itemStore = [[CDItemStore alloc] init];
+    [itemStore deleteItem:cdItem];
+    NSMutableArray *mutableArray = [items mutableCopy];
+    [mutableArray removeObject:cdItem];
+    items = [NSArray arrayWithArray:mutableArray];
+    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+
+}
+
+
+
 
 @end
