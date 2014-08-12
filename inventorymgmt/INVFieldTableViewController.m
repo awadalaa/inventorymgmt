@@ -51,11 +51,11 @@
     if(currentItem.itemType) [itemField_.field setText:[currentItem itemType]];
     if(currentItem.qty) [currentQtyField_.field setText:[[currentItem qty] stringValue]];
     NSLog(@" origqty %@",[[currentItem originalQty] stringValue]);
-    if(currentItem.originalQty) [currentQtyField_.field setText:[[currentItem originalQty] stringValue]];
-    if(currentItem.price) [currentQtyField_.field setText:[[currentItem price] stringValue]];
-    if(currentItem.cost) [currentQtyField_.field setText:[[currentItem cost] stringValue]];
-    if(currentItem.color) [currentQtyField_.field setText:[currentItem color]];
-    if(currentItem.weight) [currentQtyField_.field setText:[[currentItem weight] stringValue]];
+    if(currentItem.originalQty) [stockQtyField_.field setText:[[currentItem originalQty] stringValue]];
+    if(currentItem.price) [priceField_.field setText:[[currentItem price] stringValue]];
+    if(currentItem.cost) [costField_.field setText:[[currentItem cost] stringValue]];
+    if(currentItem.color) [colorField_.field setText:[currentItem color]];
+    if(currentItem.weight) [weightField_.field setText:[[currentItem weight] stringValue]];
 }
 
 -(void)loadFields{
@@ -108,14 +108,21 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     //Keep the regular behavior
-    [super viewWillDisappear:animated];
-    
     //Force the keyboard to dismiss so our changes are saved to our item
     [nameField_.field resignFirstResponder];
     [itemField_.field resignFirstResponder];
     [weightField_.field resignFirstResponder];
     [currentQtyField_.field resignFirstResponder];
     [stockQtyField_.field resignFirstResponder];
+    
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        // back button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        NSLog(@"%@:",currentItem.name);
+        if (currentItem.name==nil)
+            [self deleteItem];
+    }
+    [super viewWillDisappear:animated];
 }
 
 -(FormField *) makeTextField: (NSString*)name
